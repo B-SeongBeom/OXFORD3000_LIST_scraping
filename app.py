@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 
+import random
+
 # 알파벳 리스트
 oxford_urls = [
     'https://www.oxfordlearnersdictionaries.com/wordlist/american_english/oxford3000/Oxford3000_A-B/?page=',
@@ -31,6 +33,14 @@ for oxford_url in oxford_urls:
             word_list.append(alphabet_item.text) 
         count += 1
 
-print(word_list)
-print(len(word_list))
+# print(word_list)
+# print(len(word_list))
 
+# 랜덤으로 뽑기
+random_value = []
+
+for i in range(0, 6):
+    random_value.append(random.randint(1, len(word_list)))
+
+for i in random_value:
+    word_list[i]
